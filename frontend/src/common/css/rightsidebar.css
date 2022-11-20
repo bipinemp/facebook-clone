@@ -1,0 +1,103 @@
+.rightsidebar {
+  position: fixed;
+  right: 0;
+  width: 25%;
+  /* margin-right: 30px; */
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 5px 10px 8px;
+  overflow: scroll;
+}
+.rightsidebar::-webkit-scrollbar {
+  display: none;
+}
+.rightsidebar:hover::-webkit-scrollbar {
+  display: block;
+  width: 9px;
+  direction: rtl;
+}
+
+.rightsidebar::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 7px;
+}
+.rightsidebar::-webkit-scrollbar-track {
+  background-color: none;
+}
+.rightsidebar h3 {
+  color: var(--input-text);
+  font-size: 1em;
+}
+b {
+  color: var(--title-text);
+}
+.sponserod {
+  padding: 15px;
+  border-bottom: 1px solid var(--border);
+}
+.birthdays {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border-bottom: 1px solid var(--border);
+}
+.birth-div {
+  display: flex;
+  gap: 0.1em;
+  font-size: 0.9em;
+}
+.birth {
+  height: 36px;
+  width: 50px;
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yT/r/ZEyd1mPSYcT.png);
+  background-position: 0 0;
+  background-size: auto;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.contacts {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.contacts-first {
+  display: flex;
+  gap: 5em;
+  align-items: center;
+}
+.icon-contact {
+  transition: all 150ms linear;
+}
+.icon-contact:hover {
+  background-color: #d3d3d3;
+}
+.online {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  padding: 5px 20px 5px 10px;
+  border-radius: 5px;
+  transition: all 150ms linear;
+  cursor: pointer;
+}
+.online:hover {
+  background-color: var(--icon-hover);
+}
+.online p {
+  font-size: 0.9em;
+}
+.active-online {
+  position: relative;
+}
+.active-online span {
+  position: absolute;
+  bottom: 3px;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background-color: var(--green);
+  border-radius: 50%;
+  border: 1px solid white;
+}

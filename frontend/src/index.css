@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif, serif;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+}
+:root {
+  --error: #e7195a;
+  --primary-body: #f0f2f5;
+  --input-text: #75777b;
+  --icon-border: #e4e6eb;
+  --icon-hover: #d3d3d3;
+  --title-text: #333333;
+  --normal-text: #5b5b5b;
+  --search: #65676b;
+  --red: #f02849;
+  --blue: #1b74e4;
+  --light-blue: #b5d6ff;
+  --icon: #65676b;
+  --icons: #f0f0f0;
+  --elem: #e4e4e4;
+  --box-shadow: rgba(0, 0, 0, 0.2);
+  --border: #ced0d4;
+  --profile: #333333;
+  --desc: #050505;
+  --green: #31a24c;
+  --btn-green: #42b72a;
+  --white-bg: rgba(255, 255, 255, 0.5);
+  --filter-accent: invert(39%) sepia(57%) saturate(200%) saturate(200%)
+    saturate(200%) saturate(200%) saturate(200%) saturate(147.75%)
+    hue-rotate(202deg) brightness(97%) contrast(96%);
+}
+body {
+  background-color: var(--primary-body);
+  height: 100%;
+}
+p {
+  user-select: none;
+}
+.games {
+  margin-top: 10px;
+  width: 55%;
+  margin: 0px auto;
+  text-align: center;
+}
+.market {
+  margin-top: 10px;
+  width: 55%;
+  margin: 0px auto;
+  text-align: center;
+}
+.all-posts {
+  margin-top: 10px;
+  width: 55%;
+  margin: 0px auto;
+  text-align: center;
+}
+.error-page {
+  position: fixed;
+  top: -50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+.error-page h3 {
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.error-page p {
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  padding: 30px 20px;
+  border-radius: 5px;
+}
+.fb {
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid var(--blue);
+  margin: 0px 10px;
+  transition: all 150ms ease-in-out;
+}
+.fb:hover {
+  background-color: var(--light-blue);
+}

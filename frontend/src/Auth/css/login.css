@@ -1,0 +1,279 @@
+.login {
+  width: 80%;
+  margin: 0px auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  gap: 1em;
+}
+
+.login-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 150px;
+}
+.facebook {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg);
+  height: 106px;
+  margin: -28px;
+  background-repeat: no-repeat;
+}
+.login-form {
+  width: 50%;
+  margin-top: 80px;
+}
+.error {
+  width: 396px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px 0;
+  transform: scale(0);
+  font-size: 0.8em;
+  font-weight: bold;
+  animation: error 150ms ease-in-out forwards;
+}
+
+@keyframes error {
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* For Error input fields */
+.error-input::placeholder {
+  color: var(--red);
+}
+
+.form {
+  width: 396px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 150ms linear;
+}
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.form form input {
+  padding: 15px 10px;
+  border: none;
+  outline: 1px solid var(--icon-hover);
+  border-radius: 5px;
+}
+.form form input:focus {
+  outline: 1px solid var(--blue);
+}
+.form form input::placeholder {
+  font-size: 1.1em;
+}
+.form form button {
+  padding: 10px 20px;
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 150ms linear;
+}
+form button:hover {
+  filter: brightness(90%);
+}
+.form form p {
+  text-align: center;
+  color: var(--blue);
+  font-size: 0.8em;
+  letter-spacing: 0px;
+  cursor: pointer;
+}
+.form form p:hover {
+  text-decoration: underline;
+}
+.form .account-btn {
+  width: 60%;
+  margin: 0px auto;
+  padding: 12px 15px;
+  background-color: var(--btn-green);
+  color: white;
+  border: none;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 0px;
+  transition: all 150ms linear;
+}
+.account-btn:hover {
+  filter: brightness(90%);
+}
+.page {
+  width: 396px;
+  font-size: 0.7em;
+  margin-top: 20px;
+  text-align: center;
+}
+.page b:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* for SIgn Up  */
+.sign-form {
+  width: 432px;
+}
+.modal {
+  opacity: 0;
+  animation: form 200ms ease-in-out forwards;
+  transform: scale(0);
+}
+@keyframes form {
+  100% {
+    opacity: 1;
+    transform: scale(1 7);
+  }
+}
+.cross {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/zgulV2zGm8t.png);
+  width: 24px;
+  height: 24px;
+  display: block;
+  cursor: pointer;
+}
+
+.first {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.second {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 20px 0;
+}
+.second input {
+  padding: 10px;
+  border: none;
+  outline: 1px solid var(--icon-hover);
+  border-radius: 5px;
+}
+.second input::placeholder {
+  font-size: 1.1em;
+}
+.second input:focus {
+  outline: 1px solid var(--blue);
+}
+.second-first {
+  display: flex;
+  gap: 1em;
+}
+.second-first input {
+  width: 50%;
+}
+.third {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  padding-bottom: 20px;
+}
+.third select {
+  padding: 9px 70px 5px 5px;
+  border-radius: 5px;
+  border: none;
+  outline: 1px solid var(--icon-hover);
+}
+.third select:focus {
+  outline: 1px solid var(--blue);
+}
+.select {
+  display: flex;
+  justify-content: space-between;
+}
+
+.third p {
+  font-size: 0.75em;
+  letter-spacing: 0px;
+}
+.fourth p {
+  font-size: 0.75em;
+  letter-spacing: 0px;
+}
+.fourth {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  padding-bottom: 20px;
+}
+.fourth .gender {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gender > div {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 10px 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+.gender > div span {
+  padding-right: 20px;
+}
+.gender input {
+  cursor: pointer;
+}
+.fifth {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.fifth p {
+  font-size: 0.75em;
+  letter-spacing: 0.5px;
+}
+.fifth span {
+  color: var(--blue);
+  cursor: pointer;
+}
+.fifth span:hover {
+  text-decoration: underline;
+}
+.signup {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.signup button {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: var(--btn-green);
+  color: white;
+  border: none;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 0px;
+  transition: all 150ms linear;
+}
+.signup button:hover {
+  filter: brightness(90%);
+}

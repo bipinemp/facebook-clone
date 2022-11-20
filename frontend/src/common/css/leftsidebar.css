@@ -1,0 +1,264 @@
+.leftsidebar {
+  position: fixed;
+  left: 0;
+  width: 25%;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 5px 10px 8px;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: var(--title-text);
+  overflow: scroll;
+}
+.leftsidebar::-webkit-scrollbar {
+  display: none;
+}
+.leftsidebar:hover::-webkit-scrollbar {
+  display: block;
+  width: 9px;
+}
+
+.leftsidebar::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 7px;
+}
+.leftsidebar::-webkit-scrollbar-track {
+  background-color: none;
+}
+.leftsidebar div {
+  display: flex;
+}
+.seemore {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 10px 20px 10px 10px;
+  transition: all 150ms linear;
+  cursor: pointer;
+  border-radius: 7px;
+}
+.seemore:hover {
+  background-color: var(--elem);
+}
+
+.leftsidebar-profile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 5px 20px 5px 10px;
+  transition: all 150ms linear;
+  cursor: pointer;
+  border-radius: 7px;
+}
+.leftsidebar-profile:hover {
+  background-color: var(--elem);
+}
+.leftsidebar .first-elems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.leftsidebar .second-elems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.elem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 2px 20px 2px 10px;
+  transition: all 150ms linear;
+  cursor: pointer;
+  border-radius: 7px;
+}
+.elem:hover {
+  background-color: var(--elem);
+}
+.friends {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/1juTcM7mrdW.png);
+  background-position: 0 -259px;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.saved {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/1juTcM7mrdW.png);
+  background-position: 0 -148px;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.groups {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/1juTcM7mrdW.png);
+  background-position: 0 -74px;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.marketplace {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/1juTcM7mrdW.png);
+  background-position: 0 -370px;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.watch {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/1juTcM7mrdW.png);
+  background-position: 0 -481px;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.memories {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/1juTcM7mrdW.png);
+  background-position: 0 -407px;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.pages {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/1juTcM7mrdW.png);
+  background-position: 0 -111px;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.reels {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/yjJFVz39oV-.png);
+  background-position: 0 0;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+/* Second elements */
+.adsmanager {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/DHBHg9MEeSC.png);
+  width: 36px;
+  height: 36px;
+}
+.climate {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/y3/r/Jr0q8qKF2-Y.png);
+  width: 36px;
+  height: 36px;
+}
+.covid {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/5rR6LRpNc5u.png);
+  width: 36px;
+  height: 36px;
+}
+.crisis {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/fNPcDZC-2PD.png);
+  width: 36px;
+  height: 36px;
+}
+.digital {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yT/r/DfmNVTGnJIJ.png);
+  background-position: 0px 0px;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.emotional {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/5rR6LRpNc5u.png);
+  width: 36px;
+  height: 36px;
+}
+.events {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yV/r/pEp2o4zliFT.png);
+  background-position: 0px -111px;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.favorites {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yK/r/mAnT0r8GSOm.png);
+  width: 36px;
+  height: 36px;
+}
+.fundraisers {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/1juTcM7mrdW.png);
+  background-position: 0px -296px;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.gaming {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/1juTcM7mrdW.png);
+  background-position: 0px -37px;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.live {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/1juTcM7mrdW.png);
+  background-position: 0px -333px;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.messenger {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yV/r/pEp2o4zliFT.png);
+  background-position: 0px 0px;
+  background-size: auto;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.msg-kids {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/5rR6LRpNc5u.png);
+  width: 36px;
+  height: 36px;
+}
+.recent {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yb/r/eECk3ceTaHJ.png);
+  width: 36px;
+  height: 36px;
+}
+.orders {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yv/r/GJ4EaivDaSj.png);
+  width: 36px;
+  height: 36px;
+}
+.play {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yt/r/PObY9OA5lvJ.png);
+  width: 36px;
+  height: 36px;
+}
+.recentad {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/8OasGoQgQgF.png);
+  width: 36px;
+  height: 36px;
+}

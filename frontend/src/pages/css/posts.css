@@ -1,0 +1,298 @@
+.posts {
+  margin-top: 10px;
+  width: 55%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  margin-bottom: 50px;
+}
+.post-form {
+  width: 70%;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0 1px 2px var(--box-shadow);
+  padding: 15px 25px;
+}
+.post-form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.post-form-input {
+  width: 100%;
+  display: flex;
+  gap: 0.5em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.post-form-input input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: var(--primary-body);
+}
+.post-form-input input::placeholder {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: var(--input-text);
+}
+
+.post-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.post-btn button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--blue);
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transform: scale(0);
+  animation: post 300ms linear forwards;
+}
+.active-post-btn {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.active-post-btn button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--blue);
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transform: scale(0);
+  animation: post 200ms ease-in-out forwards;
+}
+@keyframes post {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.post-form-options {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.post-form-options div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: var(--input-text);
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 150ms linear;
+}
+.post-form-options div p {
+  pointer-events: none;
+  font-size: 0.9em;
+}
+.post-form-options div:hover {
+  background-color: var(--icons);
+}
+.photovideo {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yE/r/_kZMCVNYymU.png);
+  background-position: 0 -175px;
+  background-size: auto;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.livevideo {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yE/r/_kZMCVNYymU.png);
+  background-position: 0 0;
+  background-size: auto;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.feeling {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yE/r/_kZMCVNYymU.png);
+  background-position: 0 -125px;
+  background-size: auto;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+/* For View Post */
+.view-post {
+  position: relative;
+  width: 70%;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0 1px 2px var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+}
+.view-post-first {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px 10px 17px;
+  align-items: center;
+}
+.first-1 {
+  display: flex;
+  gap: 0.5em;
+}
+.threedots {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 150ms linear;
+  cursor: pointer;
+}
+.threedots:hover {
+  background-color: var(--icon-hover);
+}
+
+.view-post-img {
+  max-width: 100%;
+  min-width: 100%;
+}
+.view-post-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.like-icon {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yK/r/H6IBF1RX3vl.png);
+  background-position: 0 -251px;
+  background-size: auto;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  opacity: 0.5;
+}
+.active-like-icon {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yK/r/H6IBF1RX3vl.png);
+  background-position: 0px -232px;
+  background-size: auto;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: var(--filter-accent);
+  animation: icon 150ms ease-in-out forwards;
+  transform: scale(0);
+  transform: rotate(360deg);
+}
+@keyframes icon {
+  100% {
+    transform: scale(1);
+    transform: rotate(0deg);
+  }
+}
+.comment-icon {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yK/r/H6IBF1RX3vl.png);
+  background-position: 0 -213px;
+  background-size: auto;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  opacity: 0.5;
+}
+.share-icon {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yK/r/H6IBF1RX3vl.png);
+  background-position: 0 -270px;
+  background-size: auto;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  opacity: 0.5;
+}
+.view-post-last {
+  width: 95%;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+  font-size: 0.9em;
+  color: var(--input-text);
+  border-bottom: 1px solid var(--border);
+}
+.view-post-last-first {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+  font-size: 0.9em;
+  color: var(--input-text);
+}
+.view-post-lst {
+  width: 100%;
+  padding: 7px 45px;
+  display: flex;
+  justify-content: space-between;
+}
+.view-post-lst div {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  color: var(--normal-text);
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 7px;
+  transition: all 150ms linear;
+}
+.view-post-lst div:hover {
+  background-color: var(--icons);
+}
+.view-post-lst div p {
+  pointer-events: none;
+  user-select: none;
+  font-weight: 600;
+  color: var(--icon);
+}
+.view-post-desc p {
+  padding: 0px 20px 9px 20px;
+  font-size: 0.9em;
+  color: var(--desc);
+}
+.image-upload {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.image-upload input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background-color: red;
+}

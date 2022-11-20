@@ -1,0 +1,215 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 8vh;
+  background-color: white;
+  box-shadow: 0 1px 2px var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  /* overflow: hidden; */
+}
+
+.search-div {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  flex-shrink: 4;
+}
+.search-input {
+  position: relative;
+}
+.search-input input {
+  padding: 10px 35px 10px 35px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: var(--primary-body);
+}
+.search-input input::placeholder {
+  color: var(--search);
+  font-size: 1em;
+}
+.search-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+  margin: auto;
+}
+
+/* For middle part */
+.nav-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  padding-right: 90px;
+}
+
+.nav-last {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  padding-right: 25px;
+}
+.nav-last img {
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.home-icon::after {
+  content: "";
+  position: absolute;
+  background-color: var(--blue);
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.link-tag {
+  position: absolute;
+  width: 60px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 8px 5px;
+  border-radius: 8px;
+  margin-top: 6px;
+  margin-left: 20px;
+  font-size: 0.8em;
+  transition: all 100ms linear;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+  animation: animate 150ms ease-in-out forwards;
+}
+.linkm-tag {
+  position: absolute;
+  width: 100px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 8px 5px;
+  border-radius: 8px;
+  margin-top: 6px;
+  margin-left: 7px;
+  font-size: 0.8em;
+  transition: all 100ms linear;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+  animation: animate 150ms ease-in-out forwards;
+}
+.link-menu-tag {
+  position: absolute;
+  width: 65px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 8px 5px;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-left: -10px;
+  font-size: 0.8em;
+  transition: all 100ms linear;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+  animation: animate 150ms ease-in-out forwards;
+}
+.link-msg-tag {
+  position: absolute;
+  width: 100px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 8px 5px;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-left: -20px;
+  font-size: 0.8em;
+  transition: all 100ms linear;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+  animation: animate 150ms ease-in-out forwards;
+}
+.link-notify-tag {
+  position: absolute;
+  width: 100px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 8px 5px;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-left: -20px;
+  font-size: 0.8em;
+  transition: all 100ms linear;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+  animation: animate 150ms ease-in-out forwards;
+}
+@keyframes animate {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nonactive-link-tag {
+  display: none;
+}
+.logout {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/7oxngn4NzHJ.png);
+  background-position: 0px -179px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.account-profile {
+  position: fixed;
+  right: 3vh;
+  top: 9vh;
+  background-color: white;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border-radius: 5px;
+}
+.account-profile div:not(.profile-name) {
+  display: flex;
+  padding: 10px 20px 10px 10px;
+  align-items: center;
+  background-color: var(--icons);
+  gap: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 150ms linear;
+}
+.account-profile div:hover {
+  filter: brightness(90%);
+}
+.account-profile div p {
+  pointer-events: none;
+}
+.profile-name {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  font-size: 0.8em;
+  padding: 10px 20px 10px 10px;
+  background-color: var(--icons);
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 150ms linear;
+}
+.profile-name img {
+  border: 1px solid black;
+  border-radius: 50%;
+}
