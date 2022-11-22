@@ -8,8 +8,6 @@ import { ThreeDots } from "../icons/ThreeDots";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 const AllPosts = () => {
-  const fname = localStorage.getItem("fname");
-  const lname = localStorage.getItem("lname");
   const token = localStorage.getItem("token");
 
   const [like, setLike] = useState(false);
@@ -29,14 +27,16 @@ const AllPosts = () => {
           authorization: `Bearer ${token}`,
         },
       })
-      .then((res) => setPosts(res.data.posts))
+      .then((res) => {
+        setPosts(res.data.posts);
+      })
       .catch((error) => null);
   }, [token]);
   return (
     <div className="posts">
       {posts.map((post) => {
         return (
-          <div className="view-post" key={post._id}>
+          <div className="view-post all-posts" key={post._id}>
             <div className="view-post-first">
               <div className="first-1">
                 <div>
@@ -48,7 +48,7 @@ const AllPosts = () => {
                       border: "1px solid black",
                       cursor: "pointer",
                     }}
-                    src={process.env.PUBLIC_URL + "/images/logo512.png"}
+                    src={`http://localhost:4000/uploads/auth/${post.user_id.pic}`}
                     alt="profile"
                   />
                 </div>
@@ -71,6 +71,7 @@ const AllPosts = () => {
                         fontSize: "0.7em",
                         letterSpacing: "0px",
                         cursor: "pointer",
+                        textAlign: "start",
                       }}
                     >
                       {formatDistanceToNow(new Date(post.createdAt), {
@@ -95,7 +96,7 @@ const AllPosts = () => {
 
             <div className="view-post-img">
               <img
-                src={`http://localhost:4000/uploads/${post.profile}`}
+                src={`http://localhost:4000/uploads/posts/${post.profile}`}
                 alt="post_image"
               />
             </div>

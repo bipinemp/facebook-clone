@@ -5,16 +5,16 @@ import "./css/rightsidebar.css";
 
 const RightSidebar = () => {
   const Profiles = [
-    { img: "/images/elon.jpg", name: "Elon Musk" },
-    { img: "/images/mark.png", name: "Mark Zuckerberg" },
-    { img: "/images/steve.jpeg", name: "Steve Jobs" },
-    { img: "/images/jeff.png", name: "Jeff Bezos" },
-    { img: "/images/rock.jpg", name: "The Rock" },
-    { img: "/images/roman.jpg", name: "Roman Reigns" },
-    { img: "/images/seth.jpg", name: "Seth Rollins" },
-    { img: "/images/john.jpg", name: "John Cena" },
-    { img: "/images/tony.jpg", name: "Tony Stark" },
-    { img: "/images/thor.jpg", name: "Thor Odinson" },
+    { img: "/images/elon.jpg", name: "Elon Musk", border: true },
+    { img: "/images/mark.png", name: "Mark Zuckerberg", border: false },
+    { img: "/images/steve.jpeg", name: "Steve Jobs", border: false },
+    { img: "/images/jeff.png", name: "Jeff Bezos", border: true },
+    { img: "/images/rock.jpg", name: "The Rock", border: false },
+    { img: "/images/roman.jpg", name: "Roman Reigns", border: false },
+    { img: "/images/seth.jpg", name: "Seth Rollins", border: true },
+    { img: "/images/john.jpg", name: "John Cena", border: false },
+    { img: "/images/tony.jpg", name: "Tony Stark", border: true },
+    { img: "/images/thor.jpg", name: "Thor Odinson", border: false },
   ];
   return (
     <div className="rightsidebar">
@@ -94,6 +94,8 @@ const RightSidebar = () => {
                     height: "36px",
                     objectFit: "cover",
                     borderRadius: "50%",
+                    outline: profile.border ? "3px solid var(--blue)" : "none",
+                    border: profile.border ? "1px solid white" : "none",
                   }}
                   loading="lazy"
                 />

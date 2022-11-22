@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 // import axios from "../services/axiosInterceptopor";
 import axios from "axios";
 import "./css/posts.css";
@@ -6,13 +6,31 @@ import { ThreeDots } from "../icons/ThreeDots";
 
 // date fns
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import Stories from "../common/Stories";
 
 const Posts = () => {
   const fname = localStorage.getItem("fname");
   const lname = localStorage.getItem("lname");
   const token = localStorage.getItem("token");
+  const pic = localStorage.getItem("pic");
+
+  const fileInputRef = useRef();
 
   const [inputClick, setInputClick] = useState(false);
+  const [image, setImage] = useState();
+  const [preview, setPreview] = useState();
+
+  useEffect(() => {
+    if (image) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreview(reader.result);
+      };
+      reader.readAsDataURL(image);
+    } else {
+      setPreview(null);
+    }
+  }, [image]);
 
   const [like, setLike] = useState(false);
   const [post, setPost] = useState({
@@ -63,6 +81,9 @@ const Posts = () => {
 
   return (
     <div className="posts">
+      <div className="stories">
+        <Stories />
+      </div>
       <div className="post-form">
         <form onSubmit={handleSubmit}>
           <div className="post-form-input">
@@ -73,7 +94,7 @@ const Posts = () => {
                 borderRadius: "50%",
                 border: "1px solid black",
               }}
-              src={process.env.PUBLIC_URL + "/images/logo512.png"}
+              src={`http://localhost:4000/uploads/auth/${pic}`}
               alt="profile"
             />
             <input
@@ -88,6 +109,20 @@ const Posts = () => {
               required
             />
           </div>
+          <div className="preview-image">
+            {image && (
+              <>
+                <div
+                  className="cross cross-img"
+                  onClick={() => {
+                    setImage(null);
+                    setPreview(null);
+                  }}
+                ></div>
+                <img src={preview} alt="preview" />
+              </>
+            )}
+          </div>
           <div className="post-form-options">
             <div>
               <span className="livevideo"></span>
@@ -97,13 +132,25 @@ const Posts = () => {
               <input
                 onChange={(e) => {
                   setPost({ ...post, profile: e.target.files[0] });
+                  const f = e.target.files[0];
+                  if (f && f.type.substring(0, 5) === "image") {
+                    setImage(f);
+                  } else {
+                    setImage(null);
+                  }
                 }}
                 type="file"
                 accept="image/*"
                 name="profile"
                 required
+                ref={fileInputRef}
               />
-              <span className="photovideo"></span>
+              <span
+                className="photovideo"
+                onClick={() => {
+                  fileInputRef.current.click();
+                }}
+              ></span>
               <p>Photo/video</p>
             </div>
             <div>
@@ -131,7 +178,7 @@ const Posts = () => {
                       border: "1px solid black",
                       cursor: "pointer",
                     }}
-                    src={process.env.PUBLIC_URL + "/images/logo512.png"}
+                    src={`http://localhost:4000/uploads/auth/${pic}`}
                     alt="profile"
                   />
                 </div>
@@ -178,7 +225,7 @@ const Posts = () => {
 
             <div className="view-post-img">
               <img
-                src={`http://localhost:4000/uploads/${post.profile}`}
+                src={`http://localhost:4000/uploads/posts/${post.profile}`}
                 alt="post_image"
               />
             </div>

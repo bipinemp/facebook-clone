@@ -6,7 +6,7 @@ export const Watch = ({ solid1, fill1, line1 }) => {
 
   const MID_ICON = {
     padding: "10px",
-    width: "110px",
+    width: "90px",
     height: "57px",
     backgroundColor: bg ? "var(--icons)" : null,
     position: "relative",
@@ -16,7 +16,7 @@ export const Watch = ({ solid1, fill1, line1 }) => {
   };
   const MID_ACTIVE_ICON = {
     padding: "10px",
-    width: "110px",
+    width: "90px",
     height: "50px",
     backgroundColor: bg ? "var(--icons)" : null,
     position: "relative",

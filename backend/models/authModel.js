@@ -34,6 +34,10 @@ const authSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    pic: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true, collection: "users" }
 );

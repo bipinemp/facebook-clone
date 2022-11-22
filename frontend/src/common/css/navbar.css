@@ -3,7 +3,7 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  height: 8vh;
+  min-height: 8vh;
   background-color: white;
   box-shadow: 0 1px 2px var(--box-shadow);
   display: flex;
@@ -13,11 +13,10 @@
 
 .search-div {
   display: flex;
+  width: 25%;
   gap: 0.5em;
-  justify-content: center;
   align-items: center;
   padding-left: 15px;
-  flex-shrink: 4;
 }
 .search-input {
   position: relative;
@@ -43,19 +42,20 @@
 
 /* For middle part */
 .nav-middle {
+  position: relative;
   display: flex;
-  justify-content: center;
+  width: 50%;
   align-items: center;
-  gap: 0.5em;
-  padding-right: 90px;
+  justify-content: center;
 }
 
 .nav-last {
+  width: 25%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.5em;
-  padding-right: 25px;
+  padding-right: 20px;
 }
 .nav-last img {
   object-fit: cover;
@@ -212,4 +212,40 @@
 .profile-name img {
   border: 1px solid black;
   border-radius: 50%;
+}
+.post-len {
+  position: relative;
+}
+.post-length {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  padding: 2px 5px;
+  color: white;
+  background-color: var(--red);
+  border-radius: 50%;
+  font-size: 0.7em;
+  border: 2px solid white;
+}
+/* For large screen */
+@media only screen and (max-width: 1100px) {
+  .navbar {
+    overflow: hidden;
+  }
+  .search-input input {
+    width: 5%;
+    padding: 10px 5px 10px 35px;
+  }
+  .search-div {
+    width: 15%;
+  }
+}
+/* For Tablet screen */
+@media only screen and (max-width: 700px) {
+  .navbar {
+    overflow: hidden;
+  }
+  .nav-middle {
+    display: none;
+  }
 }

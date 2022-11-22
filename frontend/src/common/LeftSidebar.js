@@ -6,6 +6,7 @@ import { SeeLess } from "../icons/SeeLess";
 const LeftSidebar = () => {
   const fname = localStorage.getItem("fname");
   const lname = localStorage.getItem("lname");
+  const pic = localStorage.getItem("pic");
 
   const [showMore, setShowMore] = useState(false);
 
@@ -48,7 +49,7 @@ const LeftSidebar = () => {
             borderRadius: "50%",
             border: "1px solid black",
           }}
-          src={process.env.PUBLIC_URL + "/images/logo512.png"}
+          src={`http://localhost:4000/uploads/auth/${pic}`}
           alt="profile"
         />
         <p style={{ pointerEvents: "none", textTransform: "uppercase" }}>

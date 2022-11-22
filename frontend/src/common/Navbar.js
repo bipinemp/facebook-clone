@@ -9,7 +9,8 @@ import { Menu } from "../icons/Menu";
 import { Messenger } from "../icons/Messenger";
 import { Notifications } from "../icons/Notifications";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ const Navbar = () => {
   const fname = localStorage.getItem("fname");
   const lname = localStorage.getItem("lname");
   const email = localStorage.getItem("email");
+  const pic = localStorage.getItem("pic");
 
   const [solid, setSolid] = useState("");
   const [solid1, setSolid1] = useState("");
@@ -47,8 +49,24 @@ const Navbar = () => {
     localStorage.removeItem("fname");
     localStorage.removeItem("lname");
     localStorage.removeItem("email");
+    localStorage.removeItem("pic");
     navigate("/login");
   };
+
+  const token = localStorage.getItem("token");
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/api/posts/all", {
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        setPosts(res.data.posts);
+      })
+      .catch((error) => null);
+  }, [token]);
 
   return (
     <nav className="navbar">
@@ -81,6 +99,7 @@ const Navbar = () => {
           <Home solid={solid} fill={fill} line={line} />
         </NavLink>
         <NavLink
+          className="post-len"
           to="posts"
           style={({ isActive }) => {
             isActive
@@ -97,6 +116,7 @@ const Navbar = () => {
           }}
         >
           <Watch solid1={solid1} fill1={fill1} line1={line1} />
+          <span className="post-length">{posts.length}</span>
         </NavLink>
         <NavLink
           to="market"
@@ -147,7 +167,7 @@ const Navbar = () => {
         >
           <img
             style={{ width: "35px", display: "block" }}
-            src={process.env.PUBLIC_URL + "/images/logo512.png"}
+            src={`http://localhost:4000/uploads/auth/${pic}`}
             alt="profile"
           />
           <span className={imgHover ? "link-menu-tag" : "nonactive-link-tag"}>
@@ -160,7 +180,7 @@ const Navbar = () => {
           <div className="profile-name">
             <img
               style={{ width: "35px", display: "block" }}
-              src={process.env.PUBLIC_URL + "/images/logo512.png"}
+              src={`http://localhost:4000/uploads/auth/${pic}`}
               alt="profile"
             />
             <p style={{ display: "flex", flexDirection: "column" }}>

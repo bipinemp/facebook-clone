@@ -7,7 +7,7 @@ export const Home = ({ solid, fill, line }) => {
 
   const MID_ICON = {
     padding: "10px",
-    width: "110px",
+    width: "90px",
     height: "57px",
     backgroundColor: bg ? "var(--icons)" : null,
     position: "relative",
@@ -17,7 +17,7 @@ export const Home = ({ solid, fill, line }) => {
   };
   const MID_ACTIVE_ICON = {
     padding: "10px",
-    width: "110px",
+    width: "90px",
     height: "50px",
     backgroundColor: bg ? "var(--icons)" : null,
     position: "relative",
@@ -41,7 +41,7 @@ export const Home = ({ solid, fill, line }) => {
         style={line ? MID_ICON : MID_ACTIVE_ICON}
         onMouseEnter={() => setBg(true)}
         onMouseLeave={() => setBg(false)}
-        className={line ? "home-icon" : null}
+        className={line ? "home-icon mid-icon" : "mid-active-icon"}
       >
         <svg
           viewBox="0 0 28 28"

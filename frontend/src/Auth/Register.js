@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "../services/axiosInterceptopor";
 
 function Register({ setIsOpen }) {
@@ -41,6 +41,23 @@ function Register({ setIsOpen }) {
     2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022,
   ];
 
+  const [image, setImage] = useState();
+  const [preview, setPreview] = useState();
+
+  useEffect(() => {
+    if (image) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreview(reader.result);
+      };
+      reader.readAsDataURL(image);
+    } else {
+      setPreview(null);
+    }
+  }, [image]);
+
+  const fileInputRef = useRef();
+
   const [userData, setUserData] = useState({
     fname: "",
     lname: "",
@@ -50,11 +67,24 @@ function Register({ setIsOpen }) {
     year: "",
     month: "",
     day: "",
+    pic: "",
   });
   const handleRegister = async (e) => {
     e.preventDefault();
+
+    const formdata = new FormData();
+    formdata.append("fname", userData.fname);
+    formdata.append("lname", userData.lname);
+    formdata.append("email", userData.email);
+    formdata.append("password", userData.password);
+    formdata.append("gender", userData.gender);
+    formdata.append("year", userData.year);
+    formdata.append("month", userData.month);
+    formdata.append("day", userData.day);
+    formdata.append("pic", userData.pic);
+
     const response = await axios
-      .post("http://localhost:4000/api/auth/register", userData)
+      .post("http://localhost:4000/api/auth/register", formdata)
       .catch(
         (error) =>
           setEmptyFields(error.response.data.emptyFields) ||
@@ -62,6 +92,7 @@ function Register({ setIsOpen }) {
       );
     if (response.status === 201) {
       setIsOpen(false);
+      setPreview(null);
       setUserData({
         fname: "",
         lname: "",
@@ -71,11 +102,13 @@ function Register({ setIsOpen }) {
         year: "",
         month: "",
         day: "",
+        pic: "",
       });
     }
   };
+
   return (
-    <div>
+    <div className="sign">
       <form onSubmit={handleRegister} className="sign-form">
         {error && <p className="error">{error}</p>}
         <div className="first">
@@ -140,6 +173,69 @@ function Register({ setIsOpen }) {
             type="password"
             placeholder="New password"
           />
+        </div>
+
+        <div
+          style={{
+            outline: emptyFields.includes("pic") && "1px solid var(--red)",
+            display: "flex",
+            alignItems: "center",
+            gap: "2em",
+          }}
+        >
+          <div className="user-image">
+            <input
+              onChange={(e) => {
+                setUserData({ ...userData, pic: e.target.files[0] });
+                const f = e.target.files[0];
+                if (f && f.type.substring(0, 5) === "image") {
+                  setImage(f);
+                } else {
+                  setImage(null);
+                }
+              }}
+              type="file"
+              accept="image/*"
+              name="pic"
+              ref={fileInputRef}
+            />
+            <span
+              className="user-pic"
+              onClick={() => {
+                fileInputRef.current.onClick();
+              }}
+            ></span>
+            <span>Profile Picture</span>
+          </div>
+          {preview && (
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "1em",
+              }}
+            >
+              <img
+                style={{
+                  width: "60px",
+                  height: "60px",
+                  borderRadius: "50%",
+                  border: "4px solid var(--blue)",
+                }}
+                src={preview}
+                alt="profile"
+              />
+              <span
+                className="cross"
+                style={{
+                  backgroundColor: "var(--icon-hover)",
+                  borderRadius: "50%",
+                  backgroundRepeat: "no-repeat",
+                }}
+                onClick={() => setImage(null)}
+              ></span>
+            </div>
+          )}
         </div>
 
         <div className="third">

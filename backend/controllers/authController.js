@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 // User Registration
 const userRegister = async (req, res) => {
   const { fname, lname, email, password, gender, year, month, day } = req.body;
+  const pic = req.file ? req.file.filename : null;
   let emptyFields = [];
   if (!fname) {
     emptyFields.push("fname");
@@ -29,6 +30,9 @@ const userRegister = async (req, res) => {
   }
   if (!day) {
     emptyFields.push("day");
+  }
+  if (!pic) {
+    emptyFields.push("pic");
   }
   if (emptyFields.length > 0) {
     return res
@@ -55,6 +59,7 @@ const userRegister = async (req, res) => {
           year,
           month,
           day,
+          pic,
         });
 
         const regUser = await newUser.save();
@@ -98,6 +103,7 @@ const userLogin = async (req, res) => {
             fname: isUser.fname,
             lname: isUser.lname,
             email: isUser.email,
+            pic: isUser.pic,
           });
         } else {
           return res.status(400).json({ message: "Invalid Credentials" });

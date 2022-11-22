@@ -1,13 +1,14 @@
 .rightsidebar {
   position: fixed;
-  right: 0;
+  top: 10vh;
+  right: 20px;
   width: 25%;
-  /* margin-right: 30px; */
   height: 92vh;
   display: flex;
   flex-direction: column;
   padding: 0px 5px 10px 8px;
   overflow: scroll;
+  /* background-color: red; */
 }
 .rightsidebar::-webkit-scrollbar {
   display: none;
@@ -27,7 +28,7 @@
 }
 .rightsidebar h3 {
   color: var(--input-text);
-  font-size: 1em;
+  font-size: 0.9em;
 }
 b {
   color: var(--title-text);
@@ -46,7 +47,7 @@ b {
 .birth-div {
   display: flex;
   gap: 0.1em;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 .birth {
   height: 36px;
@@ -86,7 +87,7 @@ b {
   background-color: var(--icon-hover);
 }
 .online p {
-  font-size: 0.9em;
+  font-size: 0.75em;
 }
 .active-online {
   position: relative;
@@ -100,4 +101,17 @@ b {
   background-color: var(--green);
   border-radius: 50%;
   border: 1px solid white;
+}
+
+/* For large screen */
+@media only screen and (max-width: 1100px) {
+  .rightsidebar {
+    width: 30%;
+  }
+}
+/* for laptop */
+@media only screen and (max-width: 992px) {
+  .rightsidebar {
+    display: none;
+  }
 }
